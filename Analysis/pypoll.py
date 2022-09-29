@@ -80,8 +80,15 @@ for candidate_name in candidate_options:
         winning_percentage = vote_percentage
 
         winner = candidate_name
-
+    
     # Print the candidate list
     print(f"{candidate_name}: received {x}% ({votes:,})\n")
+    y = round(winning_percentage,1)
+winning_candidate_summary = ( 
+    f"-------------------\n"
+    f"Winner: {winner}\n"
+    f"Winning Vote Count: {winning_count:,}\n"
+    f"Winning Percentage: {y}%\n"
+    f"-------------------\n")
 
-
+print(winning_candidate_summary)
