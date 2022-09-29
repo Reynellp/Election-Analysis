@@ -16,6 +16,22 @@ file_to_load = os.path.join("Resources", "election_results.csv")
 # Create a filename variable path to the file
 file_to_save = os.path.join("Analysis","election_analysis.txt")
 
+#Intitalizing a total vote counter
+total_votes = 0
+
+# candidates names
+candidate_options = []
+
+# candidate votes
+candidate_votes = {}
+
+#Winning candidate and tracker
+winner = ""
+
+winning_count = 0
+
+winning_percentage = 0
+
 # Open election results and read the file
 with open(file_to_load) as election_data:
 
@@ -25,10 +41,47 @@ with open(file_to_load) as election_data:
 # Print the header row.
     headers = next(file_reader)
 
-    print(headers)
+# Print each row in the CSV file
+    for row in file_reader:
+            
+    #2. Add to the total vote count
 
+        total_votes +=1
 
+        # Print candidates name from each row
+        candidate_name = row[2]
 
+        #If statement
+        if candidate_name not in candidate_options:
 
+            # Add it to the list of candidates
+            candidate_options.append(candidate_name)
+            
+        #Value for the key
+            candidate_votes[candidate_name] = 0
+
+        # Add a counter
+        candidate_votes[candidate_name] += 1
+
+for candidate_name in candidate_options:
+
+    #Vote count of candidate
+    votes = candidate_votes[candidate_name]
+
+    #Percentage of votes
+    vote_percentage = (votes)/(total_votes) * 100
+    x = round(vote_percentage,1)
+
+  # Determine the winner
+    if (votes > winning_count) and (vote_percentage > winning_percentage):
+
+        winning_count = votes
+
+        winning_percentage = vote_percentage
+
+        winner = candidate_name
+
+    # Print the candidate list
+    print(f"{candidate_name}: received {x}% ({votes:,})\n")
 
 
