@@ -25,7 +25,8 @@ Raymon Anthony Doane received 3.1% of votes with a total of 11,606.
 ## Which candidate won the election, what was their vote count, and what was their percentage of the total votes? 
 Candidate Diana DeGette has an overwhelming win over her comptitors with 272,892 votes which makes up 73.8% of the total votes made.
 
-## Election-Audit Summary: In a summary statement, provide a business proposal to the election commission on how this script can be used—with some modifications—for any election. Give at least two examples of how this script can be modified to be used for other elections.
+## Election-Audit Summary
+![](Analysis/Snip.png)
 
 The script provided can be used for future elections however it may need to be modified depending on the data. Two key things that may need to be modified when used for future elections.
 
